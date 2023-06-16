@@ -5,7 +5,7 @@ from widget.spot_list import get_spot_list
 from widget.spot_detail import get_spot_detail
 
 title = "서울 근교 여행지 추천 Best 3"
-st.markdown(f"<h1 style='text-align: center;'>{title}</h1>", unsafe_allow_html=True) # 마크다운과 htmlm 이용해서 가운데 정렬
+st.markdown(f"<h1 style='text-align: center; background-color:black;color:white '>{title}</h1>", unsafe_allow_html=True) # 마크다운과 htmlm 이용해서 가운데 정렬
 # streamlit run main.py
 
 def make_travel_spot(name, img, star, desc, map, link): #이름,이미지, 별점, 설명, 지도, 플레이스링크
@@ -61,5 +61,5 @@ if 'detail' not in st.session_state:  # key를 확인해서
 get_spot_list(spots)
 
 # 여행지 상세보기
-if st.session_state.get('detail',""):  # 초기값의 빈 문자열
+if st.session_state['detail']:  # 초기값의 빈 문자열
     get_spot_detail()  # 처음에는 실행하지 않고... 클릭했을 때 반응해서 그려지게
